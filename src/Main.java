@@ -15,6 +15,7 @@ public class Main {
     public static final String LIST_CONTACTS  = "LC";
     public static final String EXISTS_PHONE   = "EP";
     public static final String QUIT           = "Q";
+    public static final String LOOKUP_CONTACT  = "GN";
 
     //Constantes que definem as mensagens para o utilizador
     public static final String CONTACT_EXISTS = "contactBook.Contact already exists.";
@@ -27,6 +28,7 @@ public class Main {
     public static final String COMMAND_ERROR = "Unknown command.";
     public static final String DUPLICATE_PHONES = "There are contacts that share phone numbers.";
     public static final String UNIQUE_PHONES    = "All contacts have different phone numbers";
+
 
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
@@ -59,6 +61,9 @@ public class Main {
                 case EXISTS_PHONE:
                     existsPhone(cBook);
                     break;
+                case LOOKUP_CONTACT:
+                    lookupContact();
+                    break;
                 default:
                     System.out.println(COMMAND_ERROR);
             }
@@ -68,6 +73,9 @@ public class Main {
         System.out.println(QUIT_MSG);
         System.out.println();
         in.close();
+    }
+
+    private static void lookupContact() {
     }
 
     private static String getCommand(Scanner in) {
