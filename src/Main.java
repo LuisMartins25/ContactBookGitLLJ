@@ -62,7 +62,7 @@ public class Main {
                     existsPhone(cBook);
                     break;
                 case LOOKUP_CONTACT:
-                    lookupContact();
+                    lookupContact(in, cBook);
                     break;
                 default:
                     System.out.println(COMMAND_ERROR);
@@ -75,7 +75,9 @@ public class Main {
         in.close();
     }
 
-    private static void lookupContact() {
+    private static void lookupContact(Scanner in, ContactBook cBook) {
+        System.out.println("mudanca 2 aaaaaaaaaaa");
+
     }
 
     private static String getCommand(Scanner in) {
