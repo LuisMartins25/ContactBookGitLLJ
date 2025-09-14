@@ -27,7 +27,8 @@ public class Main {
     public static final String QUIT_MSG = "Goodbye!";
     public static final String COMMAND_ERROR = "Unknown command.";
     public static final String DUPLICATE_PHONES = "There are contacts that share phone numbers.";
-    public static final String UNIQUE_PHONES    = "All contacts have different phone numbers";
+    public static final String UNIQUE_PHONES    = "All contacts have different phone numbers.";
+    public static final String PHONE_NUMBER_DOES_NOT_EXIST = "Phone number does not exist.";
 
 
     public static void main(String[] args) {
@@ -79,22 +80,21 @@ public class Main {
         int phoneGiven = in.nextInt(); in.nextLine();
         cBook.initializeIterator();
 
-        Contact exists = null;
+        Contact found = null;
 
-        while (Cbook.hasNext()){
+        while (cBook.hasNext()){
             Contact contact = cBook.next();
             if(contact.getPhone() == phoneGiven){
-                exists = contact ;
+                found = contact ;
                 break;
             }
         }
 
         if(found != null){
-            System.out.println(found.getName() + "; " + found.getEmail() + "; " + found.getPhone() );
+            System.out.println(found.getName());
         } else {
-            System.out.println("Phone Number does not exist.");
+            System.out.println(PHONE_NUMBER_DOES_NOT_EXIST);
         }
-
     }
 
     private static String getCommand(Scanner in) {
