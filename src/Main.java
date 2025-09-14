@@ -55,7 +55,7 @@ public class Main {
                     listAllContacts(cBook);
                     break;
                 case LOOKUP_CONTACT:
-                    lookupContact();
+                    lookupContact(in, cBook);
                     break;
                 default:
                     System.out.println(COMMAND_ERROR);
@@ -68,7 +68,8 @@ public class Main {
         in.close();
     }
 
-    private static void lookupContact() {
+    private static void lookupContact(Scanner in,  ContactBook cBook) {
+        System.out.prinln("salve");
     }
 
     private static String getCommand(Scanner in) {
