@@ -76,7 +76,24 @@ public class Main {
     }
 
     private static void lookupContact(Scanner in, ContactBook cBook) {
-        System.out.println("mudanca 2 aaaaaaaaaaa");
+        int phoneGiven = in.nextInt(); in.nextLine();
+        cBook.initializeIterator();
+
+        Contact exists = null;
+
+        while (Cbook.hasNext()){
+            Contact contact = cBook.next();
+            if(contact.getPhone() == phoneGiven){
+                exists = contact ;
+                break;
+            }
+        }
+
+        if(found != null){
+            System.out.println(found.getName() + "; " + found.getEmail() + "; " + found.getPhone() );
+        } else {
+            System.out.println("Phone Number does not exist.");
+        }
 
     }
 
